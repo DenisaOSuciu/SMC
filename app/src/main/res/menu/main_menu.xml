@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/acasa"
+            android:icon="@drawable/home" />
+        <item
+            android:id="@+id/nav_profile"
+            android:title="@string/profil"
+            android:icon="@drawable/person" />
+
+
+
+    </group>
+    <group android:checkableBehavior="single">
+        <item android:title="@string/produse">
+        <menu>
+
+                <item
+                    android:id="@+id/nav_reduceri"
+                    android:checkable="true"
+
+                    android:icon="@drawable/home"
+                    android:title="@string/reduceri" />
+                <item
+                    android:id="@+id/nav_all_categories"
+                    android:title="@string/toate_categoriile"
+                    android:icon="@drawable/home" />
+
+                <item
+                    android:id="@+id/nav_new"
+                    android:title="@string/noutati"
+                    android:icon="@drawable/home" />
+
+        </menu>
+        </item>
+    </group>
+
+
+
+
+    <item android:title="@string/mai_multe">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_settings"
+                    android:title="@string/setari"
+                    android:icon="@drawable/ic_settings" />
+                <item
+                    android:id="@+id/nav_deconectare"
+                    android:title="@string/deconectare"
+                    android:icon="@drawable/ic_decon" />
+            </group>
+        </menu>
+    </item>
+
+</menu>

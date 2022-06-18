@@ -1,0 +1,97 @@
+<resources>
+    <string name="app_name">SMC</string>
+    <string name="sign_up">Loading...</string>
+    <string-array name="genderValues">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="productSizes">
+        <item>XS</item>
+        <item>S</item>
+        <item>M</item>
+        <item>L</item>
+        <item>XL</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
+        <item>41</item>
+
+    </string-array>
+
+    <string-array name="sortare">
+        <item>Sortează produsele</item>
+        <item>Dupa relevanță</item>
+        <item>Preț crescător</item>
+        <item>Preț descrescător</item>
+
+    </string-array>
+
+    <string-array name="productCategories">
+        <item>Topuri</item>
+        <item>Bluze</item>
+        <item>Camasi</item>
+        <item>Tricouri</item>
+        <item>Pantaloni</item>
+        <item>Jeans</item>
+        <item>Fuste</item>
+        <item>Pantaloni scurti</item>
+        <item>Rochii</item>
+        <item>Incaltaminte</item>
+        <item>Accesorii</item>
+
+
+    </string-array>
+    <string-array name="categories">
+        <item>Toate produsele</item>
+        <item>Topuri</item>
+        <item>Bluze</item>
+        <item>Camasi</item>
+        <item>Tricouri</item>
+        <item>Pantaloni</item>
+        <item>Jeans</item>
+        <item>Fuste</item>
+        <item>Pantaloni scurti</item>
+        <item>Rochii</item>
+
+
+    </string-array>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_chat2">ChatActivity2</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="type_a_message">Type a message</string>
+
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="setari">Setari</string>
+    <string name="deconectare">Deconectare</string>
+    <string name="mai_multe">Mai multe</string>
+    <string name="noutati">Noutati</string>
+    <string name="toate_categoriile">Toate categoriile</string>
+    <string name="reduceri">REDUCERI</string>
+    <string name="produse">Produse</string>
+    <string name="profil">Profil</string>
+    <string name="acasa">Acasa</string>
+    <string name="title_activity_suplimentar_details">SuplimentarDetailsActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>

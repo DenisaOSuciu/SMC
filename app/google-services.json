@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "696192838032",
+    "project_id": "smc-85594",
+    "storage_bucket": "smc-85594.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696192838032:android:a5f744556dd9819ed32b15",
+        "android_client_info": {
+          "package_name": "com.upt.cti.smc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "696192838032-6511ljl82gfvdvf1umk6e03pafha00u2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMNburo3GoT_32DgfDW5RjWqxIKh0QyTQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "696192838032-6511ljl82gfvdvf1umk6e03pafha00u2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

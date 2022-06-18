@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/btn_color"
+    tools:context=".activities.MainActivity">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/slideViewPager"
+            android:layout_width="411dp"
+            android:layout_height="567dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck">
+
+        </androidx.viewpager.widget.ViewPager>
+
+        <Button
+            android:id="@+id/next_btn"
+            android:layout_width="129dp"
+            android:layout_height="63dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:backgroundTint="@color/white"
+            android:gravity="center"
+            android:paddingRight="0dp"
+            android:text="Next"
+            android:textSize="20dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/slideViewPager"
+            app:layout_constraintVertical_bias="0.82" />
+
+        <LinearLayout
+            android:id="@+id/dots"
+            android:layout_width="118dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/next_btn"
+            app:layout_constraintHorizontal_bias="0.89"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/slideViewPager"
+            app:layout_constraintVertical_bias="0.765">
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="127dp"
+            android:layout_height="63dp"
+            android:background="@android:color/transparent"
+            android:backgroundTint="@color/white"
+            android:text="back"
+            android:textSize="20dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/dots"
+            app:layout_constraintHorizontal_bias="0.432"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/slideViewPager"
+            app:layout_constraintVertical_bias="0.82" />
+
+        <Button
+            android:id="@+id/finish_btn"
+            android:layout_width="315dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:backgroundTint="@color/btn_color"
+            android:text="Get started"
+            android:textSize="30dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/dots"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/slideViewPager" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

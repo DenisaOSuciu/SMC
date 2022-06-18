@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3EADF"
+    tools:context=".activities.MyProductActivity">
+
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="39dp"
+        android:layout_height="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.001"
+        app:srcCompat="@drawable/ic_back" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout6"
+        android:layout_width="409dp"
+        android:layout_height="413dp"
+        android:background="@drawable/detail_page_bg"
+        android:padding="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+
+        <Button
+            android:id="@+id/editBtn"
+            android:layout_width="212dp"
+            android:layout_height="46dp"
+            android:text="Editeaza Produsul"
+            android:textColor="#070707"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.566"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintVertical_bias="0.507" />
+
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="212dp"
+            android:layout_height="46dp"
+            android:text="Salveaza modificarile"
+            android:visibility="gone"
+            android:textColor="#070707"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.566"
+            app:layout_constraintStart_toStartOf="parent"
+
+            />
+
+        <TextView
+            android:id="@+id/numeView"
+            android:layout_width="201dp"
+            android:layout_height="39dp"
+            android:gravity="center"
+            android:text="Nume"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/editBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.432"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.188" />
+        <EditText
+            android:id="@+id/numeEdit"
+            android:layout_width="210dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="Nume"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/editBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.432"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.188" />
+
+        <TextView
+            android:id="@+id/descriereView"
+            android:layout_width="201dp"
+            android:layout_height="39dp"
+            android:foregroundGravity="center|center_horizontal"
+            android:gravity="center"
+            android:text="descriere"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/editBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.423"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.332" />
+        <EditText
+            android:id="@+id/descriereEdit"
+            android:layout_width="210dp"
+            android:layout_height="45dp"
+            android:foregroundGravity="center|center_horizontal"
+            android:gravity="center"
+            android:text="descriere"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/editBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.423"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.332" />
+
+        <TextView
+            android:id="@+id/pretView"
+            android:layout_width="178dp"
+            android:layout_height="42dp"
+            android:gravity="center"
+            android:text="Pret"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/editBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.004"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.517" />
+        <EditText
+            android:id="@+id/pretEdit"
+            android:layout_width="178dp"
+            android:layout_height="42dp"
+            android:gravity="center"
+            android:text="Pret"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/editBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.004"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.517" />
+
+        <TextView
+            android:id="@+id/categorieView"
+            android:layout_width="258dp"
+            android:layout_height="47dp"
+            android:gravity="center"
+            android:text="Categorie"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/editBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.012"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.735" />
+
+        <Spinner
+            android:id="@+id/categorieEdit"
+            android:layout_width="178dp"
+            android:layout_height="42dp"
+            android:gravity="center"
+            android:entries="@array/categories"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/editBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.012"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.735" />
+
+        <TextView
+            android:id="@+id/marimeView"
+            android:layout_width="175dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="Marime"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/editBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.517" />
+        <EditText
+            android:id="@+id/marimeEdit"
+            android:layout_width="175dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="Marime"
+            android:visibility="gone"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/editBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.517" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imagine"
+        android:layout_width="408dp"
+        android:layout_height="260dp"
+        android:layout_marginTop="56dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:transitionName="image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/delete"
+        android:layout_width="38dp"
+        android:layout_height="33dp"
+        app:layout_constraintBottom_toTopOf="@+id/imagine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.996"
+        app:layout_constraintStart_toEndOf="@+id/back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.043"
+
+        app:srcCompat="@drawable/ic_delete" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

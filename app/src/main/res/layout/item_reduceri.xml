@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingStart="85dp"
+    android:paddingEnd="85dp"
+    android:paddingTop="40dp"
+    android:paddingBottom="40dp"
+
+    android:background="#CF2323"
+    android:id="@+id/reduceriBox"
+    android:layout_gravity="center">
+
+    <TextView
+        android:id="@+id/nume"
+        android:layout_width="217dp"
+        android:layout_height="51dp"
+        android:text="REDUCERI"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

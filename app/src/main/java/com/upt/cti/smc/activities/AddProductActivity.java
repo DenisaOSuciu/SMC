@@ -94,7 +94,6 @@ public class AddProductActivity extends AppCompatActivity {
                     System.out.println(preferenceManager.getString(Constants.KEY_PRODUCT_SELLER_ID));
                 })
                 .addOnFailureListener(exception -> {
-                    showToast(exception.getMessage());
                 });
     }
 
@@ -134,27 +133,24 @@ public class AddProductActivity extends AppCompatActivity {
             }
     );
 
-    private void showToast(String message) {
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-    }
 
     private Boolean areDetailsValid() {
         if (encodedImage == null) {
-            showToast("Selectati o imagine");
+            binding.error.setText("Selectati o imagine");
             return false;
 
         } else if (binding.nume.getText().toString().trim().isEmpty()) {
-            showToast("Introduceti numele");
+            binding.error.setText("Introduceti numele");
             return false;
         } else if (binding.descriere.getText().toString().trim().isEmpty()) {
-            showToast("Introduceti descrierea");
+            binding.error.setText("Introduceti descrierea");
             return false;
         } else if (binding.marime.getSelectedItem().toString().trim().isEmpty()) {
-            showToast("Introduceti marimea");
+            binding.error.setText("Introduceti marimea");
             return false;
         }
         else if (binding.pret.getText().toString().trim().isEmpty()) {
-            showToast("Introduceti pretul");
+            binding.error.setText("Introduceti pretul");
             return false;
         }
         else return true;

@@ -130,20 +130,20 @@
             app:layout_constraintTop_toBottomOf="@+id/passwordLog" />
 
         <TextView
-            android:id="@+id/bt_forgotPass2"
+            android:id="@+id/error"
             android:layout_width="409dp"
             android:layout_height="34dp"
             android:layout_marginTop="184dp"
             android:layout_marginEnd="16dp"
             android:scaleX="0.9"
             android:scaleY="0.9"
-            android:text="Nume de utilizator sau parolă greșite"
             android:textAlignment="center"
             android:textColor="#ad150a"
             android:textSize="18sp"
-            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passwordLog" />
+            app:layout_constraintTop_toBottomOf="@+id/passwordLog"
+            app:layout_constraintVertical_bias="0.088" />
 
         <Button
             android:id="@+id/login"

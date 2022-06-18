@@ -284,6 +284,15 @@ public class AllProductsFragment extends Fragment implements ProductListener {
             binding.categorii.setVisibility(View.INVISIBLE);
             afisareFavorite();
         }
+        if(myValue.equals("imbracaminte")){
+            afisareImbracaminte();
+        }
+        if(myValue.equals("rochii")){
+            afisareRochii();
+        }
+        if(myValue.equals("incaltaminte")){
+            afisareIncaltaminte();
+        }
         return binding.getRoot();
 
     }
@@ -327,6 +336,229 @@ public class AllProductsFragment extends Fragment implements ProductListener {
     }
 
 
+    private void afisareImbracaminte(){
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        Query groupsQuery = db.collectionGroup(Constants.KEY_COLLECTION_PRODUCTS);
+        groupsQuery.get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful() && task.getResult() != null) {
+                        List<Products> products = new ArrayList<>();
+
+                        for(QueryDocumentSnapshot queryDocumentSnapshot: task.getResult()){
+
+                            Products product = new Products();
+                            product.nume = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_NAME);
+                            product.imagine = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_IMAGE);
+                            product.descriere = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_DESCRIPTION);
+                            product.pret = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_PRICE);
+                            product.marime = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_SIZE);
+                            product.seller = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_SELLER);
+                            product.salePrice = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_PRICE_SALE);
+                            product.categorie =queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_CATEGORY);
+                            product.id = queryDocumentSnapshot.getId();
+                            if (!queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_SELLER).equals(preferenceManager.getString(Constants.KEY_NAME) + " " + preferenceManager.getString(Constants.KEY_PRENAME))) {
+
+                                if(!(product.categorie.equals("Incaltaminte") || product.categorie.equals("Accesorii"))){
+                                products.add(product);}}
+
+                        }if(products.size() >=0 ){
+                            setAdapter(products);
+                        }
+                        else {
+
+                        }
+                    }
+                    else {
+
+                    }
+                });
+    }
+
+    private void afisareRochii(){
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        Query groupsQuery = db.collectionGroup(Constants.KEY_COLLECTION_PRODUCTS);
+        groupsQuery.get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful() && task.getResult() != null) {
+                        List<Products> products = new ArrayList<>();
+
+                        for(QueryDocumentSnapshot queryDocumentSnapshot: task.getResult()){
+
+                            Products product = new Products();
+                            product.nume = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_NAME);
+                            product.imagine = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_IMAGE);
+                            product.descriere = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_DESCRIPTION);
+                            product.pret = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_PRICE);
+                            product.marime = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_SIZE);
+                            product.seller = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_SELLER);
+                            product.salePrice = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_PRICE_SALE);
+                            product.categorie =queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_CATEGORY);
+                            product.id = queryDocumentSnapshot.getId();
+                            if (!queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_SELLER).equals(preferenceManager.getString(Constants.KEY_NAME) + " " + preferenceManager.getString(Constants.KEY_PRENAME))) {
+
+                                if(product.categorie.equals("Rochii")){
+                                    products.add(product);}}
+
+                        }if(products.size() >=0 ){
+                            setAdapter(products);
+                        }
+                        else {
+
+                        }
+                    }
+                    else {
+
+                    }
+                });
+    }
+    private void afisareIncaltaminte(){
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        Query groupsQuery = db.collectionGroup(Constants.KEY_COLLECTION_PRODUCTS);
+        groupsQuery.get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful() && task.getResult() != null) {
+                        List<Products> products = new ArrayList<>();
+
+                        for(QueryDocumentSnapshot queryDocumentSnapshot: task.getResult()){
+
+                            Products product = new Products();
+                            product.nume = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_NAME);
+                            product.imagine = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_IMAGE);
+                            product.descriere = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_DESCRIPTION);
+                            product.pret = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_PRICE);
+                            product.marime = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_SIZE);
+                            product.seller = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_SELLER);
+                            product.salePrice = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_PRICE_SALE);
+                            product.categorie =queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_CATEGORY);
+                            product.id = queryDocumentSnapshot.getId();
+                            if (!queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_SELLER).equals(preferenceManager.getString(Constants.KEY_NAME) + " " + preferenceManager.getString(Constants.KEY_PRENAME))) {
+
+                                if(product.categorie.equals("Incaltaminte")){
+                                    products.add(product);}}
+
+                        }if(products.size() >=0 ){
+                            setAdapter(products);
+                        }
+                        else {
+
+                        }
+                    }
+                    else {
+
+                    }
+                });
+    }
+
+
+ /*   public void sortAllCategories(){
+        binding.spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String option=binding.spinner2.getSelectedItem().toString();
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                Query groupsQuery = db.collectionGroup(Constants.KEY_COLLECTION_PRODUCTS);
+                groupsQuery
+                        .get()
+                        .addOnCompleteListener( task -> {
+                            if (task.isSuccessful() && task.getResult() != null) {
+                                List<Products> products = new ArrayList<>();
+
+                                for (QueryDocumentSnapshot queryDocumentSnapshot : task.getResult()) {
+
+
+                                    Products product = new Products();
+                                    product.nume = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_NAME);
+                                    product.imagine = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_IMAGE);
+                                    product.descriere = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_DESCRIPTION);
+                                    product.pret = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_PRICE);
+                                    product.marime = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_SIZE);
+                                    product.seller = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_SELLER);
+                                    product.salePrice = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_PRICE_SALE);
+                                    product.categorie =queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_CATEGORY);
+                                    product.id = queryDocumentSnapshot.getId();
+
+                                    if(!(product.categorie.equals("Incaltaminte") || product.categorie.equals("Accesorii"))){
+                                        products.add(product);}
+
+                                }
+
+                                int n = products.size();
+
+                                if (option.equals("Preț crescător")) {
+                                    for (int i = 0; i < n - 1; i++)
+                                        for (int j = 0; j < n - i - 1; j++)
+
+                                            if (Integer.parseInt(products.get(j).pret) > Integer.parseInt(products.get(j + 1).pret)) {
+                                                swap(products, j, j + 1);
+                                            }
+                                } else if (option.equals("Preț descrescător")) {
+                                    for (int i = 0; i < n - 1; i++)
+                                        for (int j = 0; j < n - i - 1; j++)
+
+                                            if (Integer.parseInt(products.get(j).pret) < Integer.parseInt(products.get(j + 1).pret)) {
+                                                swap(products, j, j + 1);
+                                            }
+                                } else if (option.equals("După relevanță") || option.equals("Sortează produsele")) {
+                                    getProducts();
+                                }
+                                setAdapter(products);
+
+                            }
+                        });
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                getProducts();
+            }
+        });
+    }
+
+ binding.categorii.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String option = binding.categorii.getSelectedItem().toString();
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                Query groupsQuery = db.collectionGroup(Constants.KEY_COLLECTION_PRODUCTS);
+                groupsQuery.get()
+                        .addOnCompleteListener(task -> {
+                            if (task.isSuccessful() && task.getResult() != null) {
+                                List<Products> products = new ArrayList<>();
+
+                                for (QueryDocumentSnapshot queryDocumentSnapshot : task.getResult()) {
+
+                                    Products product = new Products();
+                                    product.categorie =queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_CATEGORY);
+                                    product.nume = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_NAME);
+                                    product.imagine = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_IMAGE);
+                                    product.descriere = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_DESCRIPTION);
+                                    product.pret = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_PRICE);
+                                    product.marime = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_SIZE);
+                                    product.seller = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_SELLER);
+                                    product.salePrice = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_PRICE_SALE);
+                                    product.id = queryDocumentSnapshot.getId();
+                                    product.sellerID = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_SELLER_ID);
+
+                                    if(!(product.categorie.equals("Incaltaminte") || product.categorie.equals("Accesorii"))){
+                                    if(option.equals(queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_CATEGORY))){
+                                        products.add(product);}}
+
+                                } if(option.equals("Toate produsele")){
+                                    getProducts();
+                                }
+                                setAdapter(products);
+                            }
+                        });
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                getProducts();
+            }
+
+        });
+
+  */
     public  final <T> void swap (List<T> l, int i, int j) {
         Collections.<T>swap(l, i, j);
     }

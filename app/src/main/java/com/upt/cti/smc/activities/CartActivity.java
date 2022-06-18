@@ -3,15 +3,12 @@ package com.upt.cti.smc.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
-
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.upt.cti.smc.adapter.CartProductsAdapter;
 import com.upt.cti.smc.databinding.ActivityCartBinding;
 import com.upt.cti.smc.listeners.ProductListener;
@@ -37,11 +34,11 @@ public class CartActivity extends AppCompatActivity implements ProductListener {
         database = FirebaseFirestore.getInstance();
         setContentView(binding.getRoot());
         binding.back.setOnClickListener(v -> onBackPressed());
-        //sum = 0.0;
 
         binding.placeOrderBtn.setOnClickListener(v -> {
             if (productsList.size() == 0) {
-                showToast("Cosul de cumparaturi este gol");
+                binding.error.setText("Cosul de cumparaturi este gol");
+                binding.error.setTextColor(Color.RED);
             } else {
                 startActivity(new Intent(getApplicationContext(), FinishOrderActivity.class));
             }
@@ -50,9 +47,6 @@ public class CartActivity extends AppCompatActivity implements ProductListener {
 
     }
 
-    private void showToast(String message) {
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-    }
 
     private void getProducts() {
         CollectionReference collectionReference = database.collection(Constants.KEY_COLLECTION_USERS);

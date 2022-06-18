@@ -128,11 +128,6 @@ public class ChatActivity extends AppCompatActivity implements ConversationListe
         }
     };
 
-
-    private void showToast(String message){
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
     private void getToken(){
         FirebaseMessaging.getInstance().getToken().addOnSuccessListener(this::updateToken);
     }
@@ -141,7 +136,7 @@ public class ChatActivity extends AppCompatActivity implements ConversationListe
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         DocumentReference documentReference = database.collection(Constants.KEY_COLLECTION_USERS).document(preferenceManager.getString(Constants.KEY_USER_ID));
         documentReference.update(Constants.KEY_FCM_TOKEN, token)
-                .addOnFailureListener(e -> showToast("Unable to update token"));
+                .addOnFailureListener(e->{});
     }
 
 

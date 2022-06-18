@@ -20,7 +20,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.upt.cti.smc.R;
 import com.upt.cti.smc.databinding.ActivityProductPageBinding;
-import com.upt.cti.smc.fragments.SellerFragment;
 import com.upt.cti.smc.listeners.ConversationListener;
 import com.upt.cti.smc.model.Products;
 import com.upt.cti.smc.model.Users;
@@ -80,17 +79,7 @@ public class ProductPageActivity extends AppCompatActivity implements Conversati
          binding.reducere.setTextColor(Color.RED);
         binding.pret.setPaintFlags(binding.pret.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
     }
-    @SuppressLint("ResourceType")
-    private void openFragment() {
-        FrameLayout fragmentLayout = new FrameLayout(this);
-        fragmentLayout.setLayoutParams(new
-                ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        fragmentLayout.setId(1000);
-        setContentView(fragmentLayout);
-        getSupportFragmentManager()
-                .beginTransaction()
-                .add(1000, new SellerFragment()).commit();
-    }
+
 
     public void setListeners() {
         binding.back.setOnClickListener(v -> onBackPressed());
@@ -98,7 +87,6 @@ public class ProductPageActivity extends AppCompatActivity implements Conversati
         binding.favoriteBtn.setOnClickListener(v -> addedToFavorite());
 
     }
-
 
     public void addedToCart() {
         database = FirebaseFirestore.getInstance();
@@ -135,14 +123,10 @@ public class ProductPageActivity extends AppCompatActivity implements Conversati
                     startActivity(i);
                 })
                 .addOnFailureListener(exception -> {
-                    showToast(exception.getMessage());
                 });
 
     }
 
-    private void showToast(String message) {
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-    }
 
     private String encodeImage(Bitmap bitmap) {
         int previewWidth = 150;
@@ -195,12 +179,10 @@ public class ProductPageActivity extends AppCompatActivity implements Conversati
         products.put(Constants.KEY_FAVORITE_SELLER, binding.sellerName.getText().toString());
         products.put(Constants.KEY_FAVORITE_IMAGE, encodedImage);
         CollectionReference collectionReference = database.collection(Constants.KEY_COLLECTION_USERS);
-        System.out.println("Faillll");
 
      collectionReference.document(preferenceManager.getString(Constants.KEY_USER_ID)).collection(Constants.KEY_FAVORITE)
             .add(products)
               .addOnSuccessListener(documentReference -> {
-               System.out.println("ail");
                    preferenceManager.putString(Constants.KEY_FAVORITE_NAME, binding.name.getText().toString());
                    preferenceManager.putString(Constants.KEY_FAVORITE_DESCRIPTION, binding.descriere.getText().toString());
                    preferenceManager.putString(Constants.KEY_FAVORITE_SIZE, binding.marime.getText().toString());
@@ -211,8 +193,6 @@ public class ProductPageActivity extends AppCompatActivity implements Conversati
                    preferenceManager.putString(Constants.KEY_FAVORITE_SELLER, binding.sellerName.getText().toString());
                                             })
                                             .addOnFailureListener(exception -> {
-                                                showToast(exception.getMessage());
-                                                System.out.println("Failfff");
                                             });
                                     binding.text.setText("Produsul a fost adaugat la favorite");
                                     binding.favorite.setBackgroundResource(R.drawable.ic_favorite_red);

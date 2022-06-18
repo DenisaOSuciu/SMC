@@ -43,7 +43,8 @@ public class MainPageActivity extends AppCompatActivity {
         binding.despre.informatii.setOnClickListener(v-> openDetails());
         binding.categorii.imbracaminte.setOnClickListener(v -> open("imbracaminte"));
         binding.categorii.incaltaminte.setOnClickListener(v -> open("incaltaminte"));
-        binding.categorii.incaltaminte.setOnClickListener(v -> open("accesorii"));
+        binding.categorii.accesorii.setOnClickListener(v -> open("accesorii"));
+        binding.rochii.rochiiBox.setOnClickListener(v -> open("rochii"));
 
 
 

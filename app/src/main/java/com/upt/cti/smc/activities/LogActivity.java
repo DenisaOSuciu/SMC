@@ -76,23 +76,20 @@ public class LogActivity extends AppCompatActivity {
                         System.out.println(preferenceManager.getString(Constants.KEY_USER_ID));
                     }
                     else {
-                        showToast("Wrong username or password!");
+                        binding.error.setText("Numele de utilizator sau parola sunt grsite");
                     }
 
                 });
 
     }
 
-    private void showToast(String message){
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-    }
 
     private Boolean areDetailsValid(){
         if(binding.usernameLog.getText().toString().trim().isEmpty()){
-            showToast("Please enter your username");
+            binding.error.setText("Intrpdu numele de utilizator");
             return false;
         }else if(binding.passwordLog.getText().toString().trim().isEmpty()){
-            showToast("Please enter your password");
+            binding.error.setText("Introdu Parola");
             return false;
         }
         else return true;

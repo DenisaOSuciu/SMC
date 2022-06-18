@@ -1,41 +1,28 @@
 package com.upt.cti.smc.activities;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.annotation.SuppressLint;
-import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.RadioGroup;
-import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 import com.upt.cti.smc.databinding.ActivityFinishOrderBinding;
 import com.upt.cti.smc.fragments.FinalFragment;
-import com.upt.cti.smc.R;
 import com.upt.cti.smc.adapter.CartProductsAdapter;
 import com.upt.cti.smc.listeners.ProductListener;
-import com.upt.cti.smc.model.Order;
 import com.upt.cti.smc.model.Products;
 import com.upt.cti.smc.model.Users;
 import com.upt.cti.smc.utilities.Constants;
 import com.upt.cti.smc.utilities.PreferenceManager;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Random;
+
 
 public class FinishOrderActivity extends AppCompatActivity implements ProductListener {
 
@@ -71,8 +58,6 @@ public class FinishOrderActivity extends AppCompatActivity implements ProductLis
         binding.addressCard.strada.setText(preferenceManager.getString(Constants.KEY_ADRESS1));
         binding.addressCard.adresa.setText(adr);
         binding.addressCard.phoneNumber.setText(preferenceManager.getString(Constants.KEY_PHONE));
-      //  livrare();
-      //  binding.total.setText(total.toString());
         setContentView(binding.getRoot());
     }
 
@@ -110,7 +95,6 @@ public void checkFields(){
                             product.marime = queryDocumentSnapshot.getString(Constants.KEY_PRODUCT_ADDED_SIZE);
                             productsList.add(product);
                             total=total+Integer.parseInt(product.pret);
-                            livrare();
 
                         }
                         if (productsList.size() >= 0) {
@@ -129,17 +113,6 @@ public void checkFields(){
 
     public void onProductClicked(Products products) {
 
-    }
-
-    public void livrare(){
-        if(binding.delivery.posta.isChecked()){
-            total=total+15.0;
-            binding.total.setText(total.toString());
-        }
-        else if(binding.delivery.curier.isSelected()){
-            total=total+20.0;
-            binding.total.setText(total.toString());
-        }else {  binding.total.setText(total.toString());}
     }
 
     @SuppressLint("ResourceType")

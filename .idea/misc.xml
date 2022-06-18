@@ -63,9 +63,11 @@
         <entry key="app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.1565" />
         <entry key="app/src/main/res/drawable/ic_more.xml" value="0.1565" />
         <entry key="app/src/main/res/drawable/ic_plus.xml" value="0.1875" />
+        <entry key="app/src/main/res/drawable/ic_products.xml" value="0.211" />
         <entry key="app/src/main/res/drawable/ic_round_add_24.xml" value="0.215" />
         <entry key="app/src/main/res/drawable/ic_round_arrow_back_ios_24.xml" value="0.1565" />
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.2055" />
+        <entry key="app/src/main/res/drawable/ig_cat_bg.xml" value="0.211" />
         <entry key="app/src/main/res/drawable/layout_bg.xml" value="0.2640625" />
         <entry key="app/src/main/res/drawable/lock_open.xml" value="0.2635416666666667" />
         <entry key="app/src/main/res/drawable/person.xml" value="0.2635416666666667" />
